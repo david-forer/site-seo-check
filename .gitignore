@@ -1,0 +1,25 @@
+# Credentials. Never commit either of these.
+# secrets/service-account.json holds a Google service account private key.
+.env
+/secrets/*
+!/secrets/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+
+# Knowledge-graph tool output, regenerated on demand.
+graphify-out/
+
+# Collected data. These directories are kept so a fresh clone can run, but
+# their contents are the site owner's own Search Console, Analytics and
+# competitor data and do not belong in a public repo.
+/state/*
+!/state/.gitkeep
+/reports/*
+!/reports/.gitkeep
+/inbox/*
+!/inbox/.gitkeep
+!/inbox/processed/
+/inbox/processed/*
+!/inbox/processed/.gitkeep

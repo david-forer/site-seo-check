@@ -1,0 +1,19 @@
+{
+  "site_url": "https://davidjforer.com",
+  "gsc_property": "sc-domain:davidjforer.com",
+  "psi_pages": [
+    "https://davidjforer.com/",
+    "https://davidjforer.com/services",
+    "https://davidjforer.com/blog"
+  ],
+  "crawl_max_pages": 400,
+  "crawl_max_extra_links": 300,
+  "gsc_days": 28,
+  "aio_enabled": true,
+  "aio_max_queries": 10,
+  "aio_min_impressions": 20,
+  "aio_location": 2840,
+  "aio_language": "en",
+  "index_check_enabled": true,
+  "index_check_limit": 400
+}
