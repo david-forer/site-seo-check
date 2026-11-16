@@ -40,6 +40,7 @@ execution/    the collectors. run_all.py is the only data path
 state/        snapshots, one dated folder per run
 reports/      the written delta report, one per run
 inbox/        drop manual exports here and the next run ingests them
+win/          the Windows scheduled run
 ```
 
 The design is deliberate: a directive that defines the job, an orchestrator that
@@ -58,6 +59,11 @@ Analytics, the index check and the AI Overview column each need credentials.
 `SETUP.md` walks through it, about fifteen minutes, and `verify_google.py`
 checks every link in the chain and names the single next action rather than
 failing somewhere inside a full run.
+
+To run it weekly on Windows, point Task Scheduler at `win/run-site-check.bat`.
+It runs the collectors, then has Claude Code write the report. Section 8 of
+`SETUP.md` covers it. `execution/gsc_api_export.py` pulls the last 90 days of
+queries into `inbox/` without a manual export.
 
 A full run on a 200 page site takes roughly 20 to 25 minutes. The index check is
 most of that, because it is one API call per URL.
