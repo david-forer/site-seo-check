@@ -115,3 +115,20 @@ per-URL index status pull. Quota is 2000 URLs a day and 600 a minute per
 property. If a run ever approaches your timeout, lower `index_check_limit`
 rather than turning the check off, because the week-over-week index delta is the
 most useful number this tool produces.
+
+## 8. Weekly run on Windows, optional
+
+`win\run-site-check.bat` runs the collectors, then hands the snapshot to Claude
+Code to write the report. Point Windows Task Scheduler at it, with the project
+folder as Start In.
+
+1. Copy `win\prompt.example.txt` to `win\prompt.txt` and edit it if you want a different report.
+2. If `claude` is not on the PATH Task Scheduler sees, or Claude needs access to
+   other folders, create `win\local.bat` with lines like:
+
+   ```bat
+   set CLAUDE=C:\path\to\claude.cmd
+   set ADD_DIRS=--add-dir "C:\path\to\site-repo"
+   ```
+
+Each run writes a log to `win\logs\`. Both local files and the logs stay out of Git.

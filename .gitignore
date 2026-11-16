@@ -23,3 +23,9 @@ graphify-out/
 !/inbox/processed/
 /inbox/processed/*
 !/inbox/processed/.gitkeep
+
+# Scheduled run logs, they contain report output.
+/win/logs/
+# Machine-specific scheduler settings and prompt.
+/win/local.bat
+/win/prompt.txt
